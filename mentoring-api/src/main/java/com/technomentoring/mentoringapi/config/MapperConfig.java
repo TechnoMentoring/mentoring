@@ -1,5 +1,4 @@
 package com.technomentoring.mentoringapi.config;
-
 import com.technomentoring.mentoringapi.dto.MentorDTO;
 import com.technomentoring.mentoringapi.dto.StudentDTO;
 import com.technomentoring.mentoringapi.model.Mentor;
@@ -9,6 +8,10 @@ import org.modelmapper.TypeMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import com.technomentoring.mentoringapi.dto.*;
+import com.technomentoring.mentoringapi.model.*;
+import org.modelmapper.*;
+import org.springframework.context.annotation.*;
 
 @Configuration
 public class MapperConfig {

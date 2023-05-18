@@ -5,31 +5,36 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import jakarta.validation.constraints.*;
-import lombok.*;
+import lombok.Setter;
 
-@Data
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class StudentDTO {
+public class ScheduleDTO {
+    private Integer idSchedule;
+    @NotNull
     private Integer idStudent;
     @NotNull
-    @NotEmpty
-    @Size(min = 3, max = 50)
-    private String name;
+    private Integer idMentor;
     @NotNull
     @NotEmpty
     @Size(min = 3, max = 50)
-    private String email;
+    private String title;
+    @NotNull
+    private LocalDateTime date;
+    @NotNull
+    private LocalTime hourStart;
+    @NotNull
+    private LocalTime hourEnd;
     @NotNull
     @NotEmpty
-    @Size(min = 3, max = 50)
-    private String password;
-    @NotNull
-    @NotEmpty
-    @Size(min = 8, max = 8)
-    private String DNI;
+    @Size(min = 3, max = 150)
+    private String description;
 }
