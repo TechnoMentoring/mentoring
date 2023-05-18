@@ -33,4 +33,11 @@ public class MentorController {
         Mentor obj = service.save(convertToEntity(dto));
         return new ResponseEntity<>(convertToDto(obj), HttpStatus.CREATED);
     }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<MentorDTO> update(@Valid @PathVariable("id") Integer id, @RequestBody MentorDTO dto)throws Exception{
+        dto.setIdMentor(id);
+        Mentor obj = service.update(convertToEntity(dto),id);
+        return new ResponseEntity<>(convertToDto(obj),HttpStatus.OK);
+    }
+
 }
