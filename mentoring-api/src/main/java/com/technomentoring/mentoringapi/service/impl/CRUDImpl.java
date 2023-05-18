@@ -1,4 +1,5 @@
 package com.technomentoring.mentoringapi.service.impl;
+import com.technomentoring.mentoringapi.exception.ModelNotFoundException;
 import com.technomentoring.mentoringapi.repository.IGenericRepository;
 import com.technomentoring.mentoringapi.service.ICRUD;
 
@@ -10,6 +11,16 @@ public abstract class CRUDImpl<T, ID> implements ICRUD<T, ID> {
     @Override
     public T save(T t) throws Exception {
         return getRepo().save(t);
+    }
+
+    @Override
+    public T update(T t, ID id) throws Exception {
+        return getRepo().save(t);
+    }
+
+    @Override
+    public List<T> readAll() throws Exception {
+        return getRepo().findAll();
     }
 
 }

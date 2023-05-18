@@ -9,6 +9,8 @@ import com.technomentoring.mentoringapi.service.IStudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IStudentService {
@@ -41,6 +43,11 @@ public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IS
             throw new DataAlreadyExistsException("El mentor con los detalles que ingresaste ya existe.");
         }
         return super.update(student, idStudent);
+    }
+
+    @Override
+    public List<Student> readAll() throws Exception {
+        return null;
     }
 
     @Override
