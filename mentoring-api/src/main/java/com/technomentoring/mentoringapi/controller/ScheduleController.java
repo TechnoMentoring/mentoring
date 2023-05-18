@@ -48,5 +48,10 @@ public class ScheduleController {
         List<ScheduleDTO> list = service.readAll().stream().map(this::convertToDto).collect(Collectors.toList());
         return new ResponseEntity<>(list,HttpStatus.OK);
     }
+    @GetMapping("/id/{id}")
+    public ResponseEntity<ScheduleDTO> readById(@PathVariable("id") Integer id)throws Exception {
+        Schedule obj = service.readById(id);
+        return new ResponseEntity<>(convertToDto(obj), HttpStatus.OK);
 
+    }
 }
