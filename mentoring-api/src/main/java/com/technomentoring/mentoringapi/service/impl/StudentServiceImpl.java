@@ -44,6 +44,12 @@ public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IS
         }
         return super.update(student, idStudent);
     }
+
+    @Override
+    public List<Student> readAll() throws Exception {
+        return null;
+    }
+
     @Override
     public boolean isStudentDuplicate(String name, String DNI, String email, String password) {
         return repo.existsByNameOrDNI(name,DNI);

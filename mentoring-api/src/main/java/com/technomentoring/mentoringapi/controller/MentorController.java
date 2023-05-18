@@ -39,5 +39,10 @@ public class MentorController {
         Mentor obj = service.update(convertToEntity(dto),id);
         return new ResponseEntity<>(convertToDto(obj),HttpStatus.OK);
     }
+    @GetMapping("/readall")
+    public ResponseEntity<List<MentorDTO>>  readAll() throws Exception{
+        List<MentorDTO> list = service.readAll().stream().map(this::convertToDto).collect(Collectors.toList());
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
 
 }
