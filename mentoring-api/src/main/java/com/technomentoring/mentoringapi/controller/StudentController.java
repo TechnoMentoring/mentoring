@@ -34,5 +34,11 @@ public class StudentController {
         Student obj = service.save(convertToEntity(dto));
         return new ResponseEntity<>(obj, HttpStatus.CREATED);
     }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Student> update(@Valid @PathVariable("id") Integer id, @RequestBody StudentDTO dto) throws Exception {
+        dto.setIdStudent(id);
+        Student obj = service.save(convertToEntity(dto));
+        return new ResponseEntity<>(obj, HttpStatus.OK);
+    }
 
 }
