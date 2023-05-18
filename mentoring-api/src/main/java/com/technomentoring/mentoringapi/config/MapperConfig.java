@@ -1,4 +1,11 @@
 package com.technomentoring.mentoringapi.config;
+
+import com.technomentoring.mentoringapi.dto.MentorDTO;
+import com.technomentoring.mentoringapi.dto.ScheduleDTO;
+import com.technomentoring.mentoringapi.dto.StudentDTO;
+import com.technomentoring.mentoringapi.model.Mentor;
+import com.technomentoring.mentoringapi.model.Schedule;
+
 import com.technomentoring.mentoringapi.dto.MentorDTO;
 import com.technomentoring.mentoringapi.dto.StudentDTO;
 import com.technomentoring.mentoringapi.model.Mentor;
@@ -8,6 +15,7 @@ import org.modelmapper.TypeMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+
 import com.technomentoring.mentoringapi.dto.*;
 import com.technomentoring.mentoringapi.model.*;
 import org.modelmapper.*;
@@ -33,6 +41,23 @@ public class MapperConfig {
 
         typeMap1.addMapping(MentorDTO::getDNI,(dest,v) -> dest.setDNI((String) v));
         typeMap2.addMapping(Mentor::getDNI,(dest,v) -> dest.setDNI((String) v));
+
+        return mapper;
+    }
+
+    @Bean("scheduleMapper")
+    public ModelMapper scheduleMapper(){
+        ModelMapper mapper = new ModelMapper();
+        TypeMap<ScheduleDTO,Schedule> typeMap1 = mapper.createTypeMap(ScheduleDTO.class, Schedule.class);
+        TypeMap<Schedule,ScheduleDTO> typeMap2 = mapper.createTypeMap(Schedule.class, ScheduleDTO.class);
+
+        typeMap1.addMapping(ScheduleDTO::getIdMentor, (dest, v) -> dest.getMentor().setIdMentor((Integer) v));
+        typeMap2.addMapping(s -> s.getMentor().getIdMentor(),  (dest, v) -> dest.setIdMentor((Integer) v));
+
+
+        typeMap1.addMapping(ScheduleDTO::getIdStudent, (dest, v) -> dest.getStudent().setIdStudent((Integer) v));
+        typeMap2.addMapping(s -> s.getStudent().getIdStudent(),  (dest, v) -> dest.setIdStudent((Integer) v));
+
 
         return mapper;
     }
