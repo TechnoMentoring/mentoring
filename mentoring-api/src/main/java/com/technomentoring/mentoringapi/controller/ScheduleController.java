@@ -49,9 +49,16 @@ public class ScheduleController {
         return new ResponseEntity<>(list,HttpStatus.OK);
     }
     @GetMapping("/id/{id}")
-    public ResponseEntity<ScheduleDTO> readById(@PathVariable("id") Integer id)throws Exception {
+    public ResponseEntity<ScheduleDTO> readById(@PathVariable("id") Integer id)throws Exception{
         Schedule obj = service.readById(id);
-        return new ResponseEntity<>(convertToDto(obj), HttpStatus.OK);
+        return new ResponseEntity<>(convertToDto(obj),HttpStatus.OK);
+
+    }
+    @GetMapping("/title/{title}")
+    public ResponseEntity<List<ScheduleDTO>> findByTitle(@PathVariable("title") String title)throws Exception{
+        List<Schedule> schedules = service.findScheduleByTitle(title);
+        List<ScheduleDTO> dtos = schedules.stream().map(this::convertToDto).collect(Collectors.toList());
+        return new ResponseEntity<>(dtos, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
