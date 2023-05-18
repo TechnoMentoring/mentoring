@@ -50,4 +50,10 @@ public class StudentController {
         service.delete(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
+    @GetMapping("/id/{id}")
+    public ResponseEntity<StudentDTO> readById(@PathVariable("id") Integer id)throws Exception{
+        Student obj = service.readById(id);
+        return new ResponseEntity<>(convertToDto(obj),HttpStatus.OK);
+
+    }
 }
