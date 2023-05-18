@@ -40,5 +40,9 @@ public class StudentController {
         Student obj = service.save(convertToEntity(dto));
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
-
+    @GetMapping("/readall")
+    public ResponseEntity<List<StudentDTO>>  readAll() throws Exception{
+        List<StudentDTO> list = service.readAll().stream().map(this::convertToDto).collect(Collectors.toList());
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
 }

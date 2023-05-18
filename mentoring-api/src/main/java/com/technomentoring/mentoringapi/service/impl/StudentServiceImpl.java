@@ -9,6 +9,8 @@ import com.technomentoring.mentoringapi.service.IStudentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IStudentService {
@@ -42,7 +44,6 @@ public class StudentServiceImpl extends CRUDImpl<Student, Integer> implements IS
         }
         return super.update(student, idStudent);
     }
-
     @Override
     public boolean isStudentDuplicate(String name, String DNI, String email, String password) {
         return repo.existsByNameOrDNI(name,DNI);
