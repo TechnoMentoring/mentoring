@@ -52,4 +52,10 @@ public class MentorController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
+    @GetMapping("/id/{id}")
+    public ResponseEntity<MentorDTO> readById(@PathVariable("id") Integer id)throws Exception{
+        Mentor obj = service.readById(id);
+        return new ResponseEntity<>(convertToDto(obj),HttpStatus.OK);
+
+    }
 }
