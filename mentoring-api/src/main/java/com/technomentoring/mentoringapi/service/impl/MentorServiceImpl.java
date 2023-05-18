@@ -32,7 +32,26 @@ public class MentorServiceImpl extends CRUDImpl<Mentor,Integer> implements IMent
     }
 
     @Override
-    public boolean isMentorDuplicate(String name, String DNI, String email, String password) {
-        return false;
+    public Mentor update(Mentor mentor, Integer idMentor) throws Exception {
+        String name = mentor.getName();
+        String DNI = mentor.getDNI();
+        String email = mentor.getEmail();
+        String password = mentor.getPassword();
+
+        getRepo().findById(idMentor).orElseThrow(() -> new ModelNotFoundException("EL mentor con id "+ idMentor + " ya existe."));
+
+        if (isMentorDuplicateUpdate(name,DNI,email,password)){
+            throw new DataAlreadyExistsException("El mentor con los detalles que ingresaste ya existe.");
+        }
+        return super.update(mentor, idMentor);
     }
+
+    public boolean isMentorDuplicate(String name, String DNI,String email,String password) {
+        return repo.existsByNameOrDNI(name,DNI);
+    }
+
+    public boolean isMentorDuplicateUpdate(String name, String DNI,String email,String password) {
+        return repo.existsByNameAndDNI(name,DNI);
+    }
+
 }

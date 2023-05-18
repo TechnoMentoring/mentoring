@@ -33,4 +33,23 @@ public class MentorController {
         Mentor obj = service.save(convertToEntity(dto));
         return new ResponseEntity<>(convertToDto(obj), HttpStatus.CREATED);
     }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<MentorDTO> update(@Valid @PathVariable("id") Integer id, @RequestBody MentorDTO dto)throws Exception{
+        dto.setIdMentor(id);
+        Mentor obj = service.update(convertToEntity(dto),id);
+        return new ResponseEntity<>(convertToDto(obj),HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Object> delete(@PathVariable("id") Integer id)throws Exception{
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @GetMapping("/readall")
+    public ResponseEntity<List<MentorDTO>>  readAll() throws Exception{
+        List<MentorDTO> list = service.readAll().stream().map(this::convertToDto).collect(Collectors.toList());
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
 }

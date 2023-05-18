@@ -1,0 +1,277 @@
+[33mcommit ff4a7c568d578e1cefcc348f64c3dae15db280a6[m[33m ([m[1;36mHEAD -> [m[1;32mdev_GabrielCorro[m[33m, [m[1;31morigin/dev_GabrielCorro[m[33m)[m
+Author: EHGCCODE <hannover.tano@gmail.com>
+Date:   Thu May 18 15:16:05 2023 -0500
+
+    feat: Implementacionde de funcionalidad visualizar datos del mentor
+
+[33mcommit 10a569216b222885f3ff98c670dfba631d741aca[m
+Merge: ef4bfeb 752b29a
+Author: EHGCCODE <hannover.tano@gmail.com>
+Date:   Thu May 18 14:49:37 2023 -0500
+
+    feat: Implementacionde de funcionalidad actualizar datos de un nuevo mentor
+
+[33mcommit ef4bfebe9e46f0af37b2d3f12ecf24dfce4b57af[m
+Author: EHGCCODE <hannover.tano@gmail.com>
+Date:   Thu May 18 14:46:20 2023 -0500
+
+    feat: Implementacionde de funcionalidad actualizar datos de un nuevo mentor
+
+[33mcommit 752b29a2b116b1ba0075ba74c0b83392fa314541[m
+Merge: b013e0b 5cde15f
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Thu May 18 14:26:47 2023 -0500
+
+    Merge branch 'develop' into dev_GabrielCorro
+
+[33mcommit b013e0b3402878048eb4e8f4acab15ae9cb9a111[m
+Author: EHGCCODE <hannover.tano@gmail.com>
+Date:   Thu May 18 14:19:11 2023 -0500
+
+    feat: Implementacionde de funcionalidad agregar un nuevo mentor
+
+[33mcommit 04fa163443eba7b9db3bbe8a0c1c0d074ff81e67[m
+Author: EHGCCODE <hannover.tano@gmail.com>
+Date:   Thu May 18 14:01:29 2023 -0500
+
+    feat: Creacion de estructura del proyecto y definicion de clases e interfaces.
+
+[33mcommit 5cde15f3c609e27e7d31b416377433e5c5550a1a[m
+Merge: 396a260 5563fa9
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Thu May 18 13:57:48 2023 -0500
+
+    Merge pull request #13 from TechnoMentoring/dev_GabrielCorro
+    
+     feat: Creacion de estructura del proyecto y definicion de clases e interfaces.
+
+[33mcommit 5563fa9ab8f34df56a4845bb1ec41a1c0f5c8f15[m
+Author: EHGCCODE <hannover.tano@gmail.com>
+Date:   Thu May 18 13:52:36 2023 -0500
+
+    feat: Creacion de estructura del proyecto y definicion de clases e interfaces.
+
+[33mcommit 396a260ca6e3fa0791f8f2e31aafd46ddf9ababb[m
+Merge: 7087733 37b436e
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Thu May 18 12:58:40 2023 -0500
+
+    Merge pull request #12 from TechnoMentoring/dev_PerezVasquez
+    
+    feat: Implementación de la funcionalidad Busqueda del Estudiante.
+
+[33mcommit 37b436eec8791e5cee1cff7665009682cba10e5b[m
+Author: JorgeMichaelPerezVasquez <jperezv8@upao.edu.pe>
+Date:   Thu May 18 02:18:38 2023 -0500
+
+    feat: Implementación de la funcionalidad Busqueda del Estudiante.
+
+[33mcommit 708773345660813bc2a854617c6f25094f0c9b34[m
+Merge: d06bcaf 8ceb358
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Thu May 18 01:19:36 2023 -0500
+
+    Merge pull request #11 from TechnoMentoring/dev_PerezVasquez
+    
+    feat: Implementación de la funcionalidad Eliminar estudiante.
+
+[33mcommit 8ceb358e8add0c276be84e2201dabcd64b1b0a6f[m
+Author: JorgeMichaelPerezVasquez <jperezv8@upao.edu.pe>
+Date:   Thu May 18 01:10:36 2023 -0500
+
+    feat: Implementación de la funcionalidad Eliminar estudiante.
+
+[33mcommit d06bcaf5776e3406d921a4c4dd2a948fd0ecda50[m
+Merge: ac45091 5dc1e98
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Thu May 18 00:52:15 2023 -0500
+
+    Merge pull request #10 from TechnoMentoring/dev_PerezVasquez
+    
+    feat: Implementación de la funcionalidad Visualizar Detalles del Estudiante
+
+[33mcommit 5dc1e989c054aefef5da53423dbc26ea50953eb3[m
+Merge: 29240db ac45091
+Author: JorgeMichaelPerezVasquez <jperezv8@upao.edu.pe>
+Date:   Thu May 18 00:37:54 2023 -0500
+
+    feat: Implementación de la funcionalidad Visualizar Detalles del Estudiante.
+
+[33mcommit 29240dba3a1817ccffbf0ac3a1c414e8858cfe8c[m
+Merge: 38d4016 ef904a4
+Author: JorgeMichaelPerezVasquez <jperezv8@upao.edu.pe>
+Date:   Thu May 18 00:34:22 2023 -0500
+
+    feat: Implementación de la funcionalidad Visualizar Detalles del Estudiante.
+
+[33mcommit ac4509164e3ae56c3fe79ade993a7f850d23087b[m
+Merge: bca6ad1 6e3eb60
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Thu May 18 00:18:28 2023 -0500
+
+    Merge pull request #9 from TechnoMentoring/dev_DiazEsquivel
+    
+    "feat: Creacion de la estructura del proyecto y definiciòn de clases"
+
+[33mcommit 6e3eb606da443e50222f96a1cd1da68cb5bbe61e[m[33m ([m[1;31morigin/dev_DiazEsquivel[m[33m, [m[1;32mdev_DiazEsquivel[m[33m)[m
+Merge: 9da613e bca6ad1
+Author: VivianLucero <vdiaze1@upao.edu.pe>
+Date:   Thu May 18 00:08:53 2023 -0500
+
+    feat: Creacion de la estructura del proyecto y definiciòn de clases
+
+[33mcommit 9da613ed50636cad5e87929195393d86cf5f9349[m
+Author: VivianLucero <vdiaze1@upao.edu.pe>
+Date:   Wed May 17 23:59:18 2023 -0500
+
+    feat: Creacion de la estructura del proyecto y definiciòn de clases.
+
+[33mcommit bca6ad126b394b55df38ae507306b9aab96eea20[m
+Merge: ef904a4 46e94b3
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 23:57:30 2023 -0500
+
+    Merge pull request #8 from TechnoMentoring/dev_PerezVasquez
+    
+    feat: Implementación de la funcionalidad Actualizar Datos del Estudia…
+
+[33mcommit 46e94b3ffa4c033cb94943cccbc9823e56e2fdff[m
+Merge: 38d4016 ef904a4
+Author: PEREZ VASQUEZ JORGE MICHAEL <131482132+JorgeMichaelPerezVasquez@users.noreply.github.com>
+Date:   Wed May 17 23:52:53 2023 -0500
+
+    Merge branch 'develop' into dev_PerezVasquez
+
+[33mcommit 38d40166749eb8aacbc2a1e82f2e6dca9602eb30[m
+Author: JorgeMichaelPerezVasquez <jperezv8@upao.edu.pe>
+Date:   Wed May 17 23:37:04 2023 -0500
+
+    feat: Implementación de la funcionalidad Actualizar Datos del Estudiante.
+
+[33mcommit ef904a490ad0df14e6831baf95d77d592c8e9797[m
+Merge: adf9475 d778f3e
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 23:07:02 2023 -0500
+
+    Merge pull request #7 from TechnoMentoring/dev_DiazEsquivel
+    
+    feat: Creaciòn de la estructura del proyecto y definiciòn de clases.
+
+[33mcommit d778f3ea56a3f17877b8d9097786dd273a2f688d[m
+Merge: f4ca629 adf9475
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 23:04:57 2023 -0500
+
+    Merge branch 'develop' into dev_DiazEsquivel
+
+[33mcommit adf9475f7227ce66cb803a2b64136e93fc82ba6b[m
+Merge: 0797de4 79ff076
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 22:59:10 2023 -0500
+
+    Merge pull request #6 from TechnoMentoring/dev_PerezVasquez
+    
+    feat: Implementar la funcionalidad de agregar un estudiante.
+
+[33mcommit f4ca629f2a9a36944cdcfe91bf8a795a26e2a318[m
+Author: VivianLucero <vdiaze1@upao.edu.pe>
+Date:   Wed May 17 22:51:31 2023 -0500
+
+    feat: Creaciòn de la estructura del proyecto y definiciòn de clases.
+
+[33mcommit 79ff076ce092de81bc9e33d813186bc9e954bd88[m
+Author: JorgeMichaelPerezVasquez <jperezv8@upao.edu.pe>
+Date:   Wed May 17 22:45:46 2023 -0500
+
+    feat: Implementar la funcionalidad de agregar un estudiante.
+
+[33mcommit 0797de405d330268e07939f7ec2b22d2844bd95d[m
+Merge: f2842b3 fb32ac1
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 21:55:25 2023 -0500
+
+    Merge pull request #5 from TechnoMentoring/dev_GabrielCorro
+    
+    feat: Creacion de estructura del proyecto y definicion de clases e interfaces
+
+[33mcommit fb32ac1f140c3cf2f413af5579c5d9db4fd3fa18[m
+Author: EHGCCODE <hannover.tano@gmail.com>
+Date:   Wed May 17 21:25:33 2023 -0500
+
+    feat: Creacion de estructura del proyecto y definicion de clases e interfaces.
+
+[33mcommit f2842b33f273bb83e6cb898edcc3ce332f46dde7[m
+Merge: 7e7df27 a3a4d9f
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 21:15:00 2023 -0500
+
+    Merge pull request #2 from TechnoMentoring/dev_PerezVasquez
+
+[33mcommit a3a4d9fec8bfea622ce2b4f5065d94e91827c338[m
+Author: JorgeMichaelPerezVasquez <jperezv8@upao.edu.pe>
+Date:   Wed May 17 21:09:16 2023 -0500
+
+    feat: Agregar estructura base del proyecto y definición de clases e interfaces.
+
+[33mcommit 7e7df276454addabff27fedf4081ed72ef8eb737[m
+Merge: cb1adca 85d7f45
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 02:36:28 2023 -0500
+
+    Merge pull request #4 from TechnoMentoring/dev_GabrielCorro
+    
+    feat: Creación de estructura del proyecto y definición de clases e interfaces
+
+[33mcommit 85d7f45c5a1140dbb7a3fe369b25110f9b6fc652[m
+Author: EHGCCODE <hannover.tano@gmail.com>
+Date:   Wed May 17 02:25:21 2023 -0500
+
+    feat: Creacion de estructura del proyecto y definicion de clases e interfaces.
+
+[33mcommit cb1adca1b3e52e3a520236e622c35ba6d462459c[m
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 01:27:14 2023 -0500
+
+    Delete mentor-api directory
+
+[33mcommit ff1dc173fa2930e5f2ae047f6a9204decbdb2368[m
+Merge: 5c639db 7309c77
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 01:21:46 2023 -0500
+
+    Merge pull request #3 from TechnoMentoring/dev_GabrielCorro
+    
+    feat: Creación de estructura del proyecto y definicion de clases e intefaces
+
+[33mcommit 7309c77be53713a6ccb0dfbf37af9db36d42efc6[m
+Author: EHGCCODE <hannover.tano@gmail.com>
+Date:   Wed May 17 01:12:30 2023 -0500
+
+    feat: Creacion de estructura del proyecto y definicion de clases e interfaces.
+
+[33mcommit 8bcccba2516c6d1207c467facc06754988f986bb[m[33m ([m[1;31morigin/dev_PerezVasquez[m[33m)[m
+Author: JorgeMichaelPerezVasquez <jperezv8@upao.edu.pe>
+Date:   Wed May 17 00:26:48 2023 -0500
+
+    feat: Implementaciòn la clase DTO.
+
+[33mcommit 5c639dbb5adb35c1dcfcdac0e094df789d673f35[m
+Merge: 010812e e100369
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Wed May 17 00:04:46 2023 -0500
+
+    Merge pull request #1 from TechnoMentoring/dev_PerezVasquez
+    
+    feat: Creaciòn de la estructura del proyecto y definiciòn de clases.
+
+[33mcommit e1003697326ba9613bbc5af8da1c52c2b1f16e0c[m
+Author: JorgeMichaelPerezVasquez <jperezv8@upao.edu.pe>
+Date:   Tue May 16 23:33:40 2023 -0500
+
+    Creaciòn de la estructura del proyecto y definicion de clases.
+
+[33mcommit 010812e92544d94de57768b9a048dc7bd843cd70[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Eduardo Hannover Gabriel Corro <130936330+EHGCCODE@users.noreply.github.com>
+Date:   Mon May 15 18:31:09 2023 -0500
+
+    Initial commit
