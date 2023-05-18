@@ -17,6 +17,7 @@ public abstract class CRUDImpl<T, ID> implements ICRUD<T, ID> {
     public T update(T t, ID id) throws Exception {
         return getRepo().save(t);
     }
+
     @Override
     public List<T> readAll() throws Exception {
         return getRepo().findAll();

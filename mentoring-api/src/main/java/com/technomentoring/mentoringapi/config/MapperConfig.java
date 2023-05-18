@@ -5,12 +5,21 @@ import com.technomentoring.mentoringapi.dto.ScheduleDTO;
 import com.technomentoring.mentoringapi.dto.StudentDTO;
 import com.technomentoring.mentoringapi.model.Mentor;
 import com.technomentoring.mentoringapi.model.Schedule;
+
+import com.technomentoring.mentoringapi.dto.MentorDTO;
+import com.technomentoring.mentoringapi.dto.StudentDTO;
+import com.technomentoring.mentoringapi.model.Mentor;
 import com.technomentoring.mentoringapi.model.Student;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeMap;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+
+import com.technomentoring.mentoringapi.dto.*;
+import com.technomentoring.mentoringapi.model.*;
+import org.modelmapper.*;
+import org.springframework.context.annotation.*;
 
 @Configuration
 public class MapperConfig {
@@ -35,6 +44,7 @@ public class MapperConfig {
 
         return mapper;
     }
+
     @Bean("scheduleMapper")
     public ModelMapper scheduleMapper(){
         ModelMapper mapper = new ModelMapper();

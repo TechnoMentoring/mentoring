@@ -40,5 +40,22 @@ public class StudentController {
         Student obj = service.save(convertToEntity(dto));
         return new ResponseEntity<>(obj, HttpStatus.OK);
     }
+    @GetMapping("/id/{id}")
+    public ResponseEntity<StudentDTO> readById(@PathVariable("id") Integer id)throws Exception{
+            Student obj = service.readById(id);
+        return new ResponseEntity<>(convertToDto(obj),HttpStatus.OK);
 
+    }
+
+    @GetMapping("/readall")
+    public ResponseEntity<List<StudentDTO>>  readAll() throws Exception{
+        List<StudentDTO> list = service.readAll().stream().map(this::convertToDto).collect(Collectors.toList());
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Object> delete(@PathVariable("id") Integer id)throws Exception{
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
