@@ -52,6 +52,11 @@ public class ScheduleController {
     public ResponseEntity<ScheduleDTO> readById(@PathVariable("id") Integer id)throws Exception {
         Schedule obj = service.readById(id);
         return new ResponseEntity<>(convertToDto(obj), HttpStatus.OK);
+    }
 
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Void> delete(@PathVariable("id") Integer id) throws Exception{
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }
