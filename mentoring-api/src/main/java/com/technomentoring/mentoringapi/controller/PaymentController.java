@@ -38,4 +38,28 @@ public class PaymentController {
         Payment obj = service.save(convertToEntity(dto));
         return new ResponseEntity<>(obj, HttpStatus.CREATED);
     }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Payment> update(@Valid @PathVariable("id") Integer id, @RequestBody PaymentDTO dto) throws Exception {
+        dto.setIdPayment(id);
+        Payment obj = service.save(convertToEntity(dto));
+        return new ResponseEntity<>(obj, HttpStatus.OK);
+    }
+    @GetMapping("/id/{id}")
+    public ResponseEntity<PaymentDTO> readById(@PathVariable("id") Integer id)throws Exception{
+        Payment obj = service.readById(id);
+        return new ResponseEntity<>(convertToDto(obj),HttpStatus.OK);
+
+    }
+
+    @GetMapping("/readall")
+    public ResponseEntity<List<PaymentDTO>>  readAll() throws Exception{
+        List<PaymentDTO> list = service.readAll().stream().map(this::convertToDto).collect(Collectors.toList());
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<Object> delete(@PathVariable("id") Integer id)throws Exception{
+        service.delete(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }
