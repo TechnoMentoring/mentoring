@@ -6,7 +6,6 @@ import java.util.List;
 
 public interface IScheduleService extends ICRUD<Schedule, Integer> {
     boolean isScheduleDuplicate(String title);
-    boolean existMentorById(Integer idMentor);
-    boolean existStudentById(Integer idStudent);
+    boolean existUsuariosById(Long idUser);
     List<Schedule> findScheduleByTitle(String title);
 }
