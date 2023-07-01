@@ -2,23 +2,26 @@ package com.technomentoring.mentoringapi.service.impl;
 
 import com.technomentoring.mentoringapi.exception.DataAlreadyExistsException;
 import com.technomentoring.mentoringapi.exception.ModelNotFoundException;
+import com.technomentoring.mentoringapi.model.Request;
 import com.technomentoring.mentoringapi.model.Schedule;
-import com.technomentoring.mentoringapi.repository.IGenericRepository;
-import com.technomentoring.mentoringapi.repository.IMentorRepository;
-import com.technomentoring.mentoringapi.repository.IScheduleRepository;
-import com.technomentoring.mentoringapi.repository.IStudentRepository;
+import com.technomentoring.mentoringapi.repository.*;
 import com.technomentoring.mentoringapi.service.IScheduleService;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class SchedulerServiceImpl extends CRUDImpl<Schedule,Integer> implements IScheduleService {
     private final IScheduleRepository repo;
-    private final IMentorRepository repositoryMentor;
-    private final IStudentRepository repositoryStudent;
+    private final IUsuariosRepository repositoryUsuario;
 
     @Override
     protected IGenericRepository<Schedule, Integer> getRepo() {
@@ -28,44 +31,37 @@ public class SchedulerServiceImpl extends CRUDImpl<Schedule,Integer> implements 
 
     @Override
     public Schedule save(Schedule schedule) throws Exception {
-        Integer idMentor = schedule.getMentor().getIdMentor();
-        Integer idStudent = schedule.getStudent().getIdStudent();
-        boolean mentorExists = this.existMentorById(idMentor);
-        boolean studentExists = this.existStudentById(idMentor);
+        Long idUser = schedule.getUsuarios().getIdUser();
+        boolean userExists = this.existUsuariosById(idUser);
+        LocalTime hourStart = schedule.getHourStart();
+        LocalTime hourEnd = schedule.getHourEnd();
 
-        if (mentorExists){
-            if (studentExists){
+        if (userExists){
                 if (isScheduleDuplicate(schedule.getTitle())){
-                    throw new DataAlreadyExistsException("El Horario con Titulo " + schedule.getTitle() + "ya existe.");
+                    throw new DataAlreadyExistsException("El horario con título ''" + schedule.getTitle()+ "'' ya existe.");
                 }
-            }else {
-                throw new ModelNotFoundException("EL estudiante con id: " + idStudent +" no existe");
-            }
         }else {
-            throw new ModelNotFoundException("EL mentor con id: " + idMentor +" no existe");
+            throw new ModelNotFoundException("El usuario con id " + idUser +" no existe");
         }
-
-        return super.save(schedule);
+        if (hourStart.compareTo(hourEnd) >= 0) {
+            // Aquí puedes manejar el caso en el que la hora de inicio sea mayor o igual a la hora de fin
+            throw new ModelNotFoundException("La hora de inicio debe ser menor a la hora de fin");
+        } else {
+            return super.save(schedule);
+        }
     }
 
     @Override
     public Schedule update(Schedule schedule, Integer idSchedule) throws Exception {
-        Integer idMentor = schedule.getMentor().getIdMentor();
-        Integer idStudent = schedule.getStudent().getIdStudent();
+        Long idUser = schedule.getUsuarios().getIdUser();
 
-        boolean mentorExists = this.existMentorById(idMentor);
-        boolean studentExists = this.existStudentById(idStudent);
+        boolean userExists = this.existUsuariosById(idUser);
+        getRepo().findById(idSchedule).orElseThrow( () -> new ModelNotFoundException("El horario con id "+idSchedule+" no existe."));
 
-        getRepo().findById(idSchedule).orElseThrow( () -> new ModelNotFoundException("El horario con id: "+idSchedule+" no existe."));
-
-        if(mentorExists){
-            if (studentExists){
+        if(userExists){
                 return super.update(schedule, idSchedule);
-            }else {
-                throw new ModelNotFoundException("El estudiante con id :" + idStudent + "no existe.");
-            }
         }else {
-            throw new ModelNotFoundException("El mentor con id :" + idMentor + "no existe.");
+            throw new ModelNotFoundException("El usuario con id :" + idUser + "no existe.");
         }
     }
 
@@ -75,19 +71,28 @@ public class SchedulerServiceImpl extends CRUDImpl<Schedule,Integer> implements 
     }
 
     @Override
-    public boolean existMentorById(Integer idMentor) {
-        return repositoryMentor.existsByIdMentor(idMentor);
-    }
-
-    @Override
-    public boolean existStudentById(Integer idStudent) {
-        return repositoryStudent.existsByIdStudent(idStudent);
+    public boolean existUsuariosById(Long idUser) {
+        return repositoryUsuario.existsByIdUser(idUser);
     }
 
     @Override
     public List<Schedule> findScheduleByTitle(String title) {
         return repo.findByTitle(title);
     }
+
+
+    public List<Schedule> getSchedulesByUserId(Long idUser) {
+        return repo.findByUsuariosIdUser(idUser);
+    }
+
+    public Schedule readById(Integer id) {
+        // Implementación de la lógica para leer un horario por su ID
+        Optional<Schedule> scheduleOptional = repo.findById(id);
+        return scheduleOptional.orElse(null);
+    }
+
+
+
 
 
 }
